@@ -1,9 +1,12 @@
 import './App.css'
 
 function App() {
+  console.log(13)
+
+
 
   return (
-    <div>Проект</div>
+    <div>Lorem ipsum dolor...</div>
   )
 }
 
