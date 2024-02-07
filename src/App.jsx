@@ -6,7 +6,10 @@ function App() {
 
 
   return (
-    <div>Lorem ipsum dolor...</div>
+    <>
+        <h1>Заголовок</h1>
+        <p>какойто текст</p>
+    </>
   )
 }
 
