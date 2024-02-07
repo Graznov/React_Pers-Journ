@@ -35,3 +35,13 @@ function App() {
     динамические данные
 21. использовангие <u>**props**</u>
 22. Упражнение - Вывод даты
+23. Композиция
+    ```
+    <CardButton>
+            <JournalItem
+                title={data[0].title}
+                text={data[0].text}
+                date={data[0].date}
+            />
+    </CardButton>
+    ```

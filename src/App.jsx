@@ -1,6 +1,7 @@
 import './App.css'
 import Button from "./сomponents/Button/Button.jsx";
 import JournalItem from "./сomponents/JournalItem/JournalItem.jsx";
+import CardButton from "./сomponents/CardButton/CardButton.jsx";
 
 function App() {
 
@@ -23,16 +24,23 @@ function App() {
         <h1>Заголовок</h1>
         <p>какойто текст</p>
         <Button/>
-        <JournalItem
-            title={data[0].title}
-            text={data[0].text}
-            date={data[0].date}
-        />
-        <JournalItem
-            title={data[1].title}
-            text={data[1].text}
-            date={data[1].date}
-        />
+        <CardButton>
+            <JournalItem
+                title={data[0].title}
+                text={data[0].text}
+                date={data[0].date}
+            />
+        </CardButton>
+
+        <CardButton>
+            <JournalItem
+                title={data[1].title}
+                text={data[1].text}
+                date={data[1].date}
+            />
+        </CardButton>
+
+
     </>
   )
 }
