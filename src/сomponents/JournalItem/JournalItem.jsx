@@ -1,9 +1,7 @@
 import './JournalItem.css'
 
-function JournalItem() {
-    const title = 'Подготовка к обновлеению курсов'
-    const date = new Date()
-    const text = 'горные походы открывают удивительные природные ландшафт'
+function JournalItem({title, text, date}) {
+
     return (
         <div className={"journal-item"}>
             <h2 className={"journal-item__header"}>{title}</h2>
