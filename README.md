@@ -5,7 +5,7 @@
 Vid 15. jsx
 
 ### 7.02.2024
-16 react fragment
+16. react fragment
 ```
 function App() {
 
@@ -29,3 +29,4 @@ function App() {
   )
 }
 ```
+18. создание компонента
