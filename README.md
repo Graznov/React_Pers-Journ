@@ -45,6 +45,7 @@ function App() {
             />
     </CardButton>
     ```
+### 8.02.2024
 24. Обработка событий
     ```
     function Button() {
@@ -58,7 +59,7 @@ function App() {
         )
     }
     ```
-26. useState
+26-useState
 
        ```   
        function Button() {
@@ -74,3 +75,4 @@ function App() {
           )
        }
        ```
+28-Верстка layout
