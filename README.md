@@ -45,7 +45,7 @@ function App() {
             />
     </CardButton>
     ```
-    24. Обработка событий
+24. Обработка событий
     ```
     function Button() {
 
