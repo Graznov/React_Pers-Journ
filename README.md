@@ -58,3 +58,19 @@ function App() {
         )
     }
     ```
+26. useState
+
+       ```   
+       function Button() {
+
+          const [text, setText] =  useState('Сохранить')
+          const clicked = () => {
+              setText((text==='Сохранить') ? 'Закрыть' : 'Сохранить')
+              console.log(text)
+          }
+    
+          return (
+              <button onClick={clicked} className={'button accent'}>{text}</button>
+          )
+       }
+       ```
