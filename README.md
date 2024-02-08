@@ -45,3 +45,16 @@ function App() {
             />
     </CardButton>
     ```
+    24. Обработка событий
+    ```
+    function Button() {
+
+        const clicked = () => {
+            console.log('btn')
+        }
+
+        return (
+            <button onClick={clicked} className={'button accent'}>Сохранить</button>
+        )
+    }
+    ```
