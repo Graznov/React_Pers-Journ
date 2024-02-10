@@ -78,3 +78,13 @@ function App() {
 28-Верстка layout
 
 29-логотип
+
+30 - работа с input
+
+    ```        
+        <Body>
+            <input type="text" onChange={(e) => {
+                console.log(e.target.value)
+            }}/>
+        </Body>
+    ```
