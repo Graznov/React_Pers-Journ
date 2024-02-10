@@ -136,4 +136,4 @@ log:
 JournalForm.jsx:17 
 ```
 
-34-особенности useState
+34-особенности useState.
