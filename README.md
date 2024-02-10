@@ -105,3 +105,33 @@ _
             <input type="text" value={inputData} onChange={inputChange}/>
         </Body>
     ```
+
+32 - Отправка формы
+
+    ```
+        const addJournalItem = (e) => {
+            e.preventDefault()
+            const formData = new FormData(e.target)
+            const formProps = Object.fromEntries(formData)
+    
+            console.log(formProps)
+        }
+
+        return(
+                <form className='journal-form' onSubmit={addJournalItem}>
+                    <input type="text" name='title' />
+                    <input type="date" name='date'/>
+                    <input type="text" name='tag' value={inputData} onChange={inputChange}/>
+                    <textarea name='post' id='' cols='30' rows='10'></textarea>
+                    <Button text='Сохранить'/>
+                </form>
+    
+        )
+    ```
+
+log:
+
+```
+{title: '1111', date: '2024-02-10', tag: '222222 222 2222222', post: '333333 33333333 333333 33333333 333333 3333333333333 333\n'}
+JournalForm.jsx:17 
+```
