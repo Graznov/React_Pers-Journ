@@ -7,6 +7,7 @@ import Body from "./layouts/Body/Body.jsx";
 import Header from "./сomponents/Header/Header.jsx";
 import JournalList from "./сomponents/JournalList/JournalList.jsx";
 import JournalAddButton from "./сomponents/JournalAddButton/JournalAddButton.jsx";
+import {useState} from "react";
 
 function App() {
 
@@ -23,8 +24,10 @@ function App() {
         }
     ]
 
+    const [inputData, setInputData] = useState('')
     const inputChange = (e) => {
-        console.log(e.target.value)
+        setInputData(e.target.value)
+        console.log(inputData)
     }
 
   return (
@@ -52,7 +55,7 @@ function App() {
             </JournalList>
         </LeftPanel>
         <Body>
-            <input type="text" onChange={inputChange}/>
+            <input type="text" value={inputData} onChange={inputChange}/>
         </Body>
 
     </div>

@@ -88,3 +88,20 @@ function App() {
             }}/>
         </Body>
     ```
+
+31 - контролируемый компонент (input)
+
+    ```
+        const [inputData, setInputData] = useState('')
+        const inputChange = (e) => {
+            setInputData(e.target.value)
+            console.log(inputData)
+        }
+    ```
+_
+    
+    ```
+        <Body>
+            <input type="text" value={inputData} onChange={inputChange}/>
+        </Body>
+    ```
