@@ -186,3 +186,5 @@ function JournalForm({ onSubmit }){
         onSubmit(formProps)
     }
 ```
+
+37- Key в списках

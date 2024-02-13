@@ -12,11 +12,13 @@ import JournalForm from "./сomponents/JournalForm/JournalForm.jsx";
 
 const INITIAL_DATA = [
     {
+        id : 1,
         title : 'Подготовка к обновлеению курсов',
         text : 'горные походы открывают удивительные природные ландшафт',
         date : new Date()
     },
     {
+        id : 2,
         title : 'Поход в горы',
         text : 'Думал, что очень много времени',
         date : new Date()
@@ -33,11 +35,18 @@ function App() {
         setItems(oldItems => [...oldItems, {
             text : item.text,
             title : item.title,
-            date : new Date(item.date)
+            date : new Date(item.date),
+            id : Math.max(...oldItems.map(i => i.id))+1
         }])
     }
 
-
+    const sortItems = (a ,b) => {
+        if(a.date < b.date) {
+            return 1
+        } else {
+            return -1
+        }
+    }
 
 
 
@@ -49,8 +58,8 @@ function App() {
             <JournalAddButton/>
             <JournalList>
 
-                { items.map(el => (
-                    <CardButton>
+                { items.sort(sortItems).map(el => (
+                    <CardButton key={ el.id }>
                         <JournalItem
                             title={el.title}
                             text={el.text}
