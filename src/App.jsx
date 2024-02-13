@@ -1,7 +1,4 @@
 import './App.css'
-import Button from "./сomponents/Button/Button.jsx";
-import JournalItem from "./сomponents/JournalItem/JournalItem.jsx";
-import CardButton from "./сomponents/CardButton/CardButton.jsx";
 import LeftPanel from "./layouts/LeftPanel/LeftPanel.jsx";
 import Body from "./layouts/Body/Body.jsx";
 import Header from "./сomponents/Header/Header.jsx";
@@ -11,18 +8,18 @@ import {useState} from "react";
 import JournalForm from "./сomponents/JournalForm/JournalForm.jsx";
 
 const INITIAL_DATA = [
-    {
-        id : 1,
-        title : 'Подготовка к обновлеению курсов',
-        text : 'горные походы открывают удивительные природные ландшафт',
-        date : new Date()
-    },
-    {
-        id : 2,
-        title : 'Поход в горы',
-        text : 'Думал, что очень много времени',
-        date : new Date()
-    }
+    // {
+    //     id : 1,
+    //     title : 'Подготовка к обновлеению курсов',
+    //     text : 'горные походы открывают удивительные природные ландшафт',
+    //     date : new Date()
+    // },
+    // {
+    //     id : 2,
+    //     title : 'Поход в горы',
+    //     text : 'Думал, что очень много времени',
+    //     date : new Date()
+    // }
 ]
 
 function App() {
@@ -40,35 +37,13 @@ function App() {
         }])
     }
 
-    const sortItems = (a ,b) => {
-        if(a.date < b.date) {
-            return 1
-        } else {
-            return -1
-        }
-    }
-
-
-
   return (
     <div className={'app'}>
 
         <LeftPanel>
             <Header/>
             <JournalAddButton/>
-            <JournalList>
-
-                { items.sort(sortItems).map(el => (
-                    <CardButton key={ el.id }>
-                        <JournalItem
-                            title={el.title}
-                            text={el.text}
-                            date={el.date}
-                        />
-                    </CardButton>
-                )) }
-
-            </JournalList>
+            <JournalList items={items}/>
         </LeftPanel>
         <Body>
             <JournalForm onSubmit={addItem}/> {/*через onSubmit={addItem} из JournalForm вытягиваются данные*/}

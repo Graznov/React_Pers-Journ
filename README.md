@@ -188,3 +188,4 @@ function JournalForm({ onSubmit }){
 ```
 
 37- Key в списках
+38- Отображение по условию
