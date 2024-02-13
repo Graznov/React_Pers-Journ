@@ -151,3 +151,38 @@ JournalForm.jsx:17
 )) }
 
 ```
+36-Упражнение - Добавление элементов
+в родительском:
+    функция обрабатывающая приходящие данные:
+```angular2html
+    const addItem = (item) => {
+        setItems(oldItems => [...oldItems, {
+            text : item.text,
+            title : item.title,
+            date : new Date(item.date)
+        }])
+    }
+```
+
+передача функции в дочерний элемент:
+
+```angular2html
+    <Body>
+        <JournalForm onSubmit={addItem}/> 
+    
+    </Body>
+```
+
+передача данных из дочернего элементв:
+```angular2html
+function JournalForm({ onSubmit }){
+
+    const addJournalItem = (e) => {
+        e.preventDefault()
+        const formData = new FormData(e.target)
+        const formProps = Object.fromEntries(formData)
+        console.log(formProps)
+
+        onSubmit(formProps)
+    }
+```
