@@ -137,3 +137,17 @@ JournalForm.jsx:17
 ```
 
 34-особенности useState.
+
+35-Работа со списком данных (Отображение данных)
+```angular2html
+{ data.map(el => (
+    <CardButton>
+        <JournalItem
+            title={el.title}
+            text={el.text}
+            date={el.date}
+        />
+    </CardButton>
+)) }
+
+```
