@@ -192,4 +192,7 @@ function JournalForm({ onSubmit }){
 38- Отображение по условию
 
 39- Обзор работы React Dev Tools
+
     фикс бага со счетчиком id/key
+
+40- Отладка приложения debug
