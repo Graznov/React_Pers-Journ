@@ -1,7 +1,8 @@
-import './Header.css'
+import styles from './Header.module.css'
+
 function Header(){
     return(
-        <div className='header'>
+        <div className={styles.logo}>
             Personal Journal
         </div>
     )

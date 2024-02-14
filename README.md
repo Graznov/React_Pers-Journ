@@ -200,3 +200,23 @@ function JournalForm({ onSubmit }){
 41- Изменение стилей (Стилизация)
 
 42- Динамические классы
+
+43- CSS модули
+```angular2html
+import styles from './Header.module.css'
+    //слово module в нвзвании файла рбязательно
+    //styles - необязательное название, можно как угодно...
+function Header(){
+    return(
+            <div className={styles.logo}>
+                {/*...но если назвали styles то его и исползуем*/}
+            Personal Journal
+        </div>
+    )
+}
+
+<form className={styles['journal-form']} onSubmit={addJournalItem}>
+    <input type="text" name='title' className={`${styles['input']} ${formValidState.title ? '' : styles['invalid']}`}/>
+    {/*если внутри js выражений или название класса двойное то используем  [ квадратные скобки ]*/}
+```
+
