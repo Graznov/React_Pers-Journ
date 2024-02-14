@@ -190,3 +190,6 @@ function JournalForm({ onSubmit }){
 37- Key в списках
 
 38- Отображение по условию
+
+39- Обзор работы React Dev Tools
+    фикс бага со счетчиком id/key
