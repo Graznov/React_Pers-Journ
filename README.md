@@ -240,3 +240,5 @@ const inputClass = (cn(styles['input'], {
 ```
 
 45-стилизация формы
+
+47-useEffect

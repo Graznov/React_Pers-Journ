@@ -14,6 +14,7 @@
     font-family: 'Source Sans 3', sans-serif;
     border-bottom: 1px solid #323232;
     width: 100%;
+    outline:none /*убрать обводку input*/
 }
 .form-lablel{
     display: flex;
@@ -33,13 +34,14 @@
 .input{
     border: none;
     background: none;
-    font-size: 32px;
+    font-size: 21px;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
     font-family: 'Source Sans 3', sans-serif;
     border-bottom: 1px solid #323232;
     width: 100%;
+    outline:none /*убрать обводку input*/
 }
 .invalid{
      border: 1px solid red;
