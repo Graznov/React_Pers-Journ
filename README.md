@@ -238,3 +238,5 @@ const inputClass = (cn(styles['input'], {
 
 <input type="text" name='title' className={inputClass}/>
 ```
+
+45-стилизация формы
