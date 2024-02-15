@@ -1,14 +1,32 @@
 import styles from './JournalForm.module.css'
 import Button from "../Button/Button.jsx";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import cn from 'classnames'
+
+const INITIAL_STATE = {
+    title : true,
+    post : true,
+    date : true
+}
 function JournalForm({ onSubmit }){ // через onSubmit отправляются данные в App
 
-    const [ formValidState, setFormValidState ] = useState({
-        title : true,
-        post : true,
-        date : true
-    })
+    const [ formValidState, setFormValidState ] = useState(INITIAL_STATE)
+
+    useEffect(() => {
+        let timerId
+        if(!formValidState.date || !formValidState.title || !formValidState.date){
+
+            timerId = setTimeout(() => {
+                console.log('Очистка состояния')
+                setFormValidState(INITIAL_STATE)
+            }, 1300)
+        }
+
+        return () => {
+            clearTimeout(timerId)
+        }
+
+    },[formValidState])
 
 
     const addJournalItem = (e) => {

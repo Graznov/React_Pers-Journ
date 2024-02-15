@@ -242,3 +242,7 @@ const inputClass = (cn(styles['input'], {
 45-стилизация формы
 
 47-useEffect
+
+48- зависимости useEffect
+
+48- очистка ефекта useEffect, таймер в useEffect

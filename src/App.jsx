@@ -22,12 +22,19 @@ function App() {
         }
     },[])
 
+    useEffect(() => {
+        if(items.length){
+            localStorage.setItem('data', JSON.stringify(items))
+        }
+        console.log('EFFECT', items)
+    }, [items]);
+
 
 
     const addItem = (item) => {
-        console.log(item)
+        // console.log(item)
         setItems(oldItems => [...oldItems, {
-            text : item.text,
+            post : item.post,
             title : item.title,
             date : new Date(item.date),
             id : oldItems.length>0 ? Math.max(...oldItems.map(i => i.id))+1 : 1
