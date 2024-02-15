@@ -220,3 +220,21 @@ function Header(){
     {/*если внутри js выражений или название класса двойное то используем  [ квадратные скобки ]*/}
 ```
 
+44- classnames
+
+в терминале:
+```angular2html
+npm install classnames
+```
+импортируем функцию:
+```angular2html
+import cn from 'classnames'
+```
+
+```angular2html
+const inputClass = (cn(styles['input'], {
+        [styles['invalid']] : !formValidState.title
+    })
+
+<input type="text" name='title' className={inputClass}/>
+```
