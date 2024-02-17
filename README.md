@@ -251,3 +251,5 @@ const inputClass = (cn(styles['input'], {
 
 52- Упражнение - Очистка формы
 
+54- useRef
+
