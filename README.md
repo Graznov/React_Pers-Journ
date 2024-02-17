@@ -249,3 +249,5 @@ const inputClass = (cn(styles['input'], {
 
 50, 51 - useReduser
 
+52- Упражнение - Очистка формы
+
