@@ -3,6 +3,7 @@ import Button from "../Button/Button.jsx";
 import {useEffect, useReducer, useRef,} from "react";
 import cn from 'classnames'
 import {formReduser, INITIAL_STATE} from "./JournalForm.state.js";
+import Input from "../Input/Input.jsx";
 
 
 function JournalForm({ onSubmit }){ // через onSubmit отправляются данные в App
@@ -65,9 +66,7 @@ function JournalForm({ onSubmit }){ // через onSubmit отправляют�
     return(
             <form className={styles['journal-form']} onSubmit={addJournalItem}>
                 <div>
-                    <input type="text" ref={titleRef} onChange={onChange} value={values.title} name='title' className={cn(styles['input-title'], {
-                        [styles['invalid']] : !isValid.title
-                    })}/>
+                    <Input type="text" ref={titleRef} isValid={isValid.title} onChange={onChange} value={values.title} name='title' appearence='title'/>
                 </div>
 
                 <div className={styles['form-row']}>
@@ -75,9 +74,7 @@ function JournalForm({ onSubmit }){ // через onSubmit отправляют�
                         <img src='../Public/data.png' alt='calendar'/>
                         <span>Дата</span>
                     </label>
-                    <input type="date" ref={dateRef} id='date' onChange={onChange} value={values.date} name='date' className={cn(styles['input'], {
-                        [styles['invalid']] : !isValid.date
-                    })}/>
+                    <Input type="date" ref={dateRef} isValid={isValid.date} id='date' onChange={onChange} value={values.date} name='date' />
                 </div>
 
                 <div className={styles['form-row']}>
@@ -85,7 +82,7 @@ function JournalForm({ onSubmit }){ // через onSubmit отправляют�
                         <img src='../Public/Folder.ico' alt='Folder'/>
                         <span>Метки</span>
                     </label>
-                    <input type="text" id='tag' onChange={onChange} value={values.tag} name='tag' className={styles['input']}/>
+                    <Input type="text" id='tag' onChange={onChange} value={values.tag} name='tag'/>
                 </div>
                 <textarea ref={postRef} name='post' id='' onChange={onChange} cols='30' rows='5' value={values.post} className={cn(styles['input'], {
                     [styles['invalid']] : !isValid.post
