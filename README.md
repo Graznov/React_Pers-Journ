@@ -254,3 +254,7 @@ const inputClass = (cn(styles['input'], {
 54- useRef
 
 55-forwardRef (них не понятно)
+
+56- Создание своего hook
+
+>ничего непонятно, но очень интересно
