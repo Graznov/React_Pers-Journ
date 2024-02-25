@@ -22,6 +22,8 @@ function App() {
 
     const [items, setItems] = useLocalStorage('data')
 
+    // console.log(items)
+
     const addItem = (item) => {
         // console.log(item)
         setItems([...mapItems(items), {
@@ -33,7 +35,7 @@ function App() {
       }
 
   return (
-      <UserContext.Provider value={{ userId: items.length }}>
+      <UserContext.Provider value={{ userId: 1 }}>
           <div className={'app'}>
 
               <LeftPanel>
