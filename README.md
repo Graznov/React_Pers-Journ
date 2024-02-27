@@ -262,3 +262,5 @@ const inputClass = (cn(styles['input'], {
 59- Создание контекста
 
 60- useContext чтение контекста
+
+61- методы в контексте

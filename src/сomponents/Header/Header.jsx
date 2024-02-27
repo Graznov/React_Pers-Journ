@@ -1,12 +1,9 @@
 import styles from './Header.module.css'
 import SelectUser from "../SelectUser/SelectUser.jsx";
 
-function Header({changedUser}){
+function Header(){
 
-    const changeUser = (e) => {
-        changedUser(e.target.value)
-        console.log(e.target.value)
-    }
+
 
     return(
         <>
@@ -14,7 +11,7 @@ function Header({changedUser}){
                 Personal Journal
             </div>
 
-            <SelectUser changedUser={changedUser}/>
+            <SelectUser/>
         </>
 
     )
