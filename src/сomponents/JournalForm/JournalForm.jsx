@@ -4,7 +4,7 @@ import {useContext, useEffect, useReducer, useRef,} from "react";
 import cn from 'classnames'
 import {formReduser, INITIAL_STATE} from "./JournalForm.state.js";
 import Input from "../Input/Input.jsx";
-import {UserContext} from "../../context/user.context.js";
+import {UserContext} from "../../context/user.context.jsx";
 
 
 function JournalForm({ onSubmit }){ // через onSubmit отправляются данные в App

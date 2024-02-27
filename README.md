@@ -264,3 +264,5 @@ const inputClass = (cn(styles['input'], {
 60- useContext чтение контекста
 
 61- методы в контексте
+
+62- Custom context
