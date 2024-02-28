@@ -1,7 +1,7 @@
 import styles from './Header.module.css'
 import SelectUser from "../SelectUser/SelectUser.jsx";
 import Button from "../Button/Button.jsx";
-import {useState} from "react";
+import {useCallback, useState} from "react";
 import Logo from "../Logo/Logo.jsx";
 
 const logos = ['../../public/Folder.ico', '../../public/data.png']
@@ -11,10 +11,10 @@ function Header(){
 
     console.log('Header')
 
-    const toggleLogo = () =>{
+    const toggleLogo =  useCallback(() =>{
         setLogoIndex(state => Number(!state))
         // setLogoIndex((logoIndex) ? 0 : 1)
-    }
+    },[])
 
 
     return(

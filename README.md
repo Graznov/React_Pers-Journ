@@ -282,3 +282,14 @@ const inputClass = (cn(styles['input'], {
 68- Memo 
 
 >memoпозволяет пропустить повторный рендеринг компонента, если его свойства не изменились.
+
+69- useCallback
+
+>useCallback— это React Hook, который позволяет кэшировать определение функции между повторными рендерингами.
+
+```angular2html
+const cachedFn = useCallback(fn, dependencies)
+```
+
+fn - функция
+dependencies - зависимости
