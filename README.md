@@ -276,3 +276,5 @@ const inputClass = (cn(styles['input'], {
 ![alt project](https://github.com/Graznov/React_Pers-Journ/blob/master/react.png?raw=true)
 
 66- пример работы React
+
+67- Ререндер дочерних компонент
