@@ -270,3 +270,7 @@ const inputClass = (cn(styles['input'], {
 63- Упражнение - работа контекста
 
 64- Ограничения контекста
+
+65- работа React
+
+![alt project](public/react.png)
