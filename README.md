@@ -273,4 +273,4 @@ const inputClass = (cn(styles['input'], {
 
 65- работа React
 
-![alt project](public/react.png)
+![alt project](react.png)
