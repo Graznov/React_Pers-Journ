@@ -23,7 +23,7 @@ function Header(){
                 Personal Journal
             </div>
 
-            <Logo image={logos[logoIndex]}/>
+            <Logo image={logos[0]}/>
 
             {/*<img src={logos[logoIndex]} width='50px' alt="logo"/>*/}
 

@@ -1,5 +1,5 @@
 import './Button.css'
-import { useState} from "react";
+import {memo, useState} from "react";
 
 function Button({ children, onClick }) {
 
@@ -10,4 +10,4 @@ function Button({ children, onClick }) {
     )
 }
 
-export default Button
+export default memo(Button)
