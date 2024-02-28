@@ -95,7 +95,7 @@ function JournalForm({ onSubmit }){ // через onSubmit отправляют�
                         <textarea ref={postRef} name='post' id='' onChange={onChange} cols='30' rows='5' value={values.post} className={cn(styles['input'], {
                             [styles['invalid']] : !isValid.post
                         })}></textarea>
-                        <Button text='Сохранить'/>
+                        <Button>Сохранить</Button>
                     </form>
 
 

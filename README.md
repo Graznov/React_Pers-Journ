@@ -274,3 +274,5 @@ const inputClass = (cn(styles['input'], {
 65- работа React
 
 ![alt project](https://github.com/Graznov/React_Pers-Journ/blob/master/react.png?raw=true)
+
+66- пример работы React
