@@ -7,7 +7,7 @@ import Input from "../Input/Input.jsx";
 import {UserContext} from "../../context/user.context.jsx";
 
 
-function JournalForm({ onSubmit, data }){ // через onSubmit отправляются данные в App
+function JournalForm({ onSubmit, data, onDelete }){ // через onSubmit отправляются данные в App
 
     const [ formState, dispatchForm ] = useReducer( formReduser, INITIAL_STATE)
     const { isValid, isFormReadyToSubmit, values } = formState
@@ -33,6 +33,10 @@ function JournalForm({ onSubmit, data }){ // через onSubmit отправл�
     }
 
     useEffect(()=>{
+        if(!data){
+            dispatchForm({type: 'CLEAR'} )
+            dispatchForm({  type : 'SET_VALUE', payload : { userId }})
+        }
         dispatchForm({ type: "SET_VALUE", payload: { ...data }})
     },[data])
 
@@ -70,16 +74,21 @@ function JournalForm({ onSubmit, data }){ // через onSubmit отправл�
     const addJournalItem = (e) => {
         e.preventDefault()
         dispatchForm({ type : 'SUBMIT' })
+    }
 
-        // onSubmit(formProps)
-
+    const deleteJournalItem = () => {
+        onDelete(data.id)
+        dispatchForm({type: 'CLEAR'} )
+        dispatchForm({  type : 'SET_VALUE', payload : { userId }})
     }
 
     return(
-
                     <form className={styles['journal-form']} onSubmit={addJournalItem}>
-                        <div>
-                            <Input type="text" ref={titleRef} isValid={isValid.title} onChange={onChange} value={values.title} name='title' appearence='title'/>
+                        <div className={styles['form-row']}>
+                            <Input appearence="title" type="text" ref={titleRef} isValid={isValid.title} onChange={onChange} value={values.title} name='title' appearence='title'/>
+                            {data?.id && <button className={styles['delete']} type="button" onClick={deleteJournalItem}>
+                                <img src="../../../public/delete.png" width='30px' alt="del"/>
+                            </button>}
                         </div>
 
                         <div className={styles['form-row']}>
