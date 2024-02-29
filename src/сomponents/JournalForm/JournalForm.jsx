@@ -7,7 +7,7 @@ import Input from "../Input/Input.jsx";
 import {UserContext} from "../../context/user.context.jsx";
 
 
-function JournalForm({ onSubmit }){ // через onSubmit отправляются данные в App
+function JournalForm({ onSubmit, data }){ // через onSubmit отправляются данные в App
 
     const [ formState, dispatchForm ] = useReducer( formReduser, INITIAL_STATE)
     const { isValid, isFormReadyToSubmit, values } = formState
@@ -32,6 +32,10 @@ function JournalForm({ onSubmit }){ // через onSubmit отправляют�
         }
     }
 
+    useEffect(()=>{
+        dispatchForm({ type: "SET_VALUE", payload: { ...data }})
+    },[data])
+
     useEffect(() => {
         let timerId
         if(!isValid.date || !isValid.title || !isValid.post){
@@ -51,8 +55,9 @@ function JournalForm({ onSubmit }){ // через onSubmit отправляют�
         if(isFormReadyToSubmit) {
             onSubmit(values)
             dispatchForm({type: 'CLEAR'} )
+            dispatchForm({  type : 'SET_VALUE', payload : { userId }})
         }
-    },[isFormReadyToSubmit, values, onSubmit])
+    },[isFormReadyToSubmit, values, onSubmit, userId])
 
     useEffect(() => {
         dispatchForm({  type : 'SET_VALUE', payload : { userId }})
@@ -82,7 +87,7 @@ function JournalForm({ onSubmit }){ // через onSubmit отправляют�
                                 <img src='../Public/data.png' alt='calendar'/>
                                 <span>Дата</span>
                             </label>
-                            <Input type="date" ref={dateRef} isValid={isValid.date} id='date' onChange={onChange} value={values.date} name='date' />
+                            <Input type="date" ref={dateRef} isValid={isValid.date} id='date' onChange={onChange} value={values.date ? new Date(values.date).toISOString().slice(0,10) : ''} name='date' />
                         </div>
 
                         <div className={styles['form-row']}>

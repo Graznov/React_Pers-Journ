@@ -4,7 +4,7 @@ import JournalItem from "../JournalItem/JournalItem.jsx";
 import {UserContext} from "../../context/user.context.jsx";
 import {useContext, useMemo} from "react";
 
-function JournalList({items}) {
+function JournalList({items, setItem}) {
 
     const { userId } = useContext(UserContext)
     const sortItems = (a ,b) => {
@@ -27,7 +27,7 @@ function JournalList({items}) {
 
     return  <>{filtredItems
                 .map(el => (
-                    <CardButton key={el.id}>
+                    <CardButton key={el.id} onClick={()=>setItem(el)}>
                         <JournalItem
                             title={el.title}
                             post={el.post}
