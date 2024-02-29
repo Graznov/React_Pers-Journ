@@ -293,3 +293,5 @@ const cachedFn = useCallback(fn, dependencies)
 
 fn - функция
 dependencies - зависимости
+
+72- useMemo

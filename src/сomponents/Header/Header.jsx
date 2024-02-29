@@ -9,12 +9,9 @@ function Header(){
 
     const [logoIndex, setLogoIndex] = useState(0)
 
-    console.log('Header')
-
-    const toggleLogo =  useCallback(() =>{
+    const toggleLogo =  () =>{
         setLogoIndex(state => Number(!state))
-        // setLogoIndex((logoIndex) ? 0 : 1)
-    },[])
+    }
 
 
     return(
@@ -23,7 +20,7 @@ function Header(){
                 Personal Journal
             </div>
 
-            <Logo image={logos[0]}/>
+            <Logo image={logos[logoIndex]}/>
 
             {/*<img src={logos[logoIndex]} width='50px' alt="logo"/>*/}
 

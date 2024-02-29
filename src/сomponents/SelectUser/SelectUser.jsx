@@ -3,7 +3,6 @@ import {UserContext} from "../../context/user.context.jsx";
 
 function SelectUser(){
 
-    console.log('SelectUser')
     const {userId, setUserId} = useContext(UserContext)
     const changeUser = (e) => {
         setUserId(Number(e.target.value))
